@@ -1,0 +1,41 @@
+.client__top-text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  color: var(--title-text-color);
+}
+
+.companies {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.companies__link {
+  width: 170px;
+  height: 92px;
+  color: #afb1b8;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transition: transform 250ms var(--transition-timing-function),
+    color 250ms var(--transition-timing-function),
+    border 250ms var(--transition-timing-function);
+  &:hover,
+  &:focus {
+    border: 1px solid var(--focus-color);
+    color: var(--focus-color);
+    border-radius: 4px;
+    transform: scale(1.1);
+  }
+}
+
+.companies__icon {
+  fill: currentColor;
+}

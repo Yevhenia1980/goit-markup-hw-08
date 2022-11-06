@@ -1,0 +1,54 @@
+.overlay {
+  background: var(--background-accent-color);
+  max-width: 1600px;
+  height: 600px;
+  padding: 200px 0;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/main-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--main-text-color);
+  width: 696px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.hero__btn {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  cursor: pointer;
+  background: var(--focus-color);
+  border-radius: 4px;
+  min-width: 216px;
+  padding: 10px 32px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  transform: scale(1);
+  transition: transform 250ms var(--transition-timing-function);
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}
