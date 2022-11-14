@@ -1,30 +1,52 @@
 .overlay {
   background: var(--background-accent-color);
-  max-width: 1600px;
-  height: 600px;
-  padding: 200px 0;
-  background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url(../images/main-bg.jpg);
+  width: 100%;
+  height: 400px;
+  padding: 118px 0;
+  background-image: var(--main-gradient), url(../images/Hero-bg-mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 0 auto;
+  @include retina {
+    background-image: var(--main-gradient), url(../images/Hero-bg-mob-2x.jpg);
+  }
+  @include tablet {
+    background-image: var(--main-gradient), url(../images/Hero-bg-tab.jpg);
+    @include retina {
+      background-image: var(--main-gradient), url(../images/Hero-bg-tab-2x.jpg);
+    }
+  }
+  @include desktop {
+    background-image: var(--main-gradient), url(../images/main-bg.jpg);
+    height: 600px;
+    padding: 200px 0;
+    @include retina {
+      background-image: var(--main-gradient), url(../images/main-bg-2x.jpg);
+    }
+  }
 }
 
 .hero__title {
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 20px;
+  line-height: 1.62;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--main-text-color);
-  width: 696px;
+  max-width: 360px;
   margin: 0 auto;
   margin-bottom: 30px;
+  @include mobile {
+    font-size: 26px;
+  }
+
+  @include desktop {
+    font-size: 44px;
+    line-height: 1.36;
+    max-width: 696px;
+  }
 }
 
 .hero__btn {
@@ -40,8 +62,8 @@
   cursor: pointer;
   background: var(--focus-color);
   border-radius: 4px;
-  min-width: 216px;
-  padding: 10px 32px;
+  min-width: 200px;
+  padding: 10px 24px;
   display: block;
   margin: 0 auto;
   border: none;
@@ -50,5 +72,9 @@
   &:hover,
   &:focus {
     transform: scale(1.1);
+  }
+  @include desktop {
+    min-width: 216px;
+    padding: 10px 32px;
   }
 }

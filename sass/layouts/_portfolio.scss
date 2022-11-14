@@ -3,6 +3,12 @@
   gap: 8px;
   margin-bottom: 50px;
   justify-content: center;
+  @include mobile-only {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 326px;
+    margin-bottom: 40px;
+  }
 }
 
 .btn {
@@ -38,6 +44,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+
+.portfolio-item {
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+  @include desktop {
+    width: calc((100% - 60px) / 3);
+  }
 }
 
 .portfolio-wrap {

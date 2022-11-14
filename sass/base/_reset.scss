@@ -11,6 +11,8 @@ h6 {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 ul,
@@ -36,4 +38,8 @@ a {
 
 .link {
   text-decoration: none;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

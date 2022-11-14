@@ -3,19 +3,37 @@
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
+  margin-bottom: 50px;
   color: var(--title-text-color);
+  @media screen and (max-width: 1199px) {
+    font-size: 28px;
+    line-height: 1.18;
+    margin-bottom: 30px;
+  }
 }
 
 .companies {
   display: flex;
+  flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   gap: 30px;
-  margin-top: 50px;
+}
+
+.companies__item {
+  width: 100%;
+  @include mobile {
+    width: calc((100% - 30px) / 2);
+  }
+  @include tablet {
+    width: calc((100% - 60px) / 3);
+  }
+  @include desktop {
+    width: calc((100% - 150px) / 6);
+  }
 }
 
 .companies__link {
-  width: 170px;
   height: 92px;
   color: #afb1b8;
   border: 1px solid #afb1b8;
@@ -33,6 +51,15 @@
     color: var(--focus-color);
     border-radius: 4px;
     transform: scale(1.1);
+  }
+  @include mobile {
+    width: 210px;
+  }
+  @include tablet {
+    width: 226px;
+  }
+  @include desktop {
+    width: 170px;
   }
 }
 
