@@ -44,7 +44,6 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  width: 100%;
 }
 
 ul,
@@ -119,10 +118,6 @@ body {
 }
 
 .header {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-  letter-spacing: 0.02em;
   border-bottom: 1px solid #ececec;
 }
 
@@ -130,7 +125,11 @@ body {
   display: flex;
   align-items: center;
   margin-right: auto;
-  padding: 16px 15px;
+}
+@media screen and (max-width: 767px) {
+  .header__container {
+    padding: 16px 15px;
+  }
 }
 @media screen and (min-width: 768px) {
   .header__container {
@@ -276,6 +275,7 @@ body {
 .mob_menu {
   position: fixed;
   z-index: 1;
+  left: 0;
   top: 0;
   background-color: var(--background-color);
   width: 100vw;
@@ -373,16 +373,15 @@ body {
 }
 
 .mob_social__list {
-  position: relative;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  row-gap: 10px;
 }
 
-.mob_social__item:not(:last-child)::after {
-  content: "";
-  height: 22px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  margin-left: 10px;
+.mob_social__item:not(:last-child) {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
 }
 
 .mob_social__link {
@@ -395,7 +394,7 @@ body {
 
 .overlay {
   background: var(--background-accent-color);
-  width: 100%;
+  max-width: 1600px;
   height: 400px;
   padding: 118px 0;
   background-image: var(--main-gradient), url(../images/Hero-bg-mob.jpg);
@@ -488,10 +487,6 @@ body {
   }
 }
 
-.benefits {
-  background-color: var(--background-color);
-}
-
 .benefits__list {
   display: flex;
   flex-wrap: wrap;
@@ -532,7 +527,7 @@ body {
   color: var(--title-text-color);
   margin-bottom: 10px;
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .benefits__title {
     text-align: center;
   }
@@ -774,24 +769,13 @@ body {
   padding-bottom: 60px;
   padding-top: 60px;
 }
-@media screen and (min-width: 1200px) {
-  .footer {
-    width: 100vw;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 60px 0;
+
+@media screen and (max-width: 1199px) {
+  .footer__container {
+    text-align: center;
   }
 }
-
-.footer__container {
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  padding: 0 15px;
-  flex-direction: column;
-  text-align: center;
-}
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .footer__container {
     width: 768px;
     padding: 0 15px;
@@ -799,12 +783,8 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .footer__container {
+    display: flex;
     align-items: baseline;
-    width: 1200px;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 15px;
-    margin: 0 auto;
   }
 }
 
@@ -829,7 +809,7 @@ body {
   color: var(--main-text-color);
 }
 
-.footer-item:not(:last-child) {
+.adress:not(:last-child) {
   margin-bottom: 9px;
 }
 
@@ -856,12 +836,6 @@ body {
   margin-bottom: 60px;
   display: block;
 }
-@media screen and (min-width: 1200px) {
-  .footer__wrap {
-    text-align: left;
-  }
-}
-
 .adress__link {
   font-size: 14px;
   line-height: 1.14;
@@ -950,8 +924,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .footer-email-wrap {
-    width: 570px;
-    text-align: left;
+    margin-left: auto;
   }
 }
 
@@ -980,10 +953,16 @@ body {
   width: 100%;
   margin-bottom: 20px;
 }
+@media screen and (min-width: 1200px) {
+  .footer-email-label {
+    max-width: 358px;
+  }
+}
 
 .email-input {
   height: 50px;
   width: 100%;
+  max-width: 450px;
   padding: 15px 16px;
   font-size: 16px;
   background-color: var(--background-accent-color);
@@ -995,6 +974,11 @@ body {
 }
 .email-input:hover, .email-input:focus {
   border: 1px solid var(--focus-color);
+}
+@media screen and (min-width: 1200px) {
+  .email-input {
+    max-width: 358px;
+  }
 }
 
 .footer-submit-btn {
@@ -1027,9 +1011,9 @@ body {
 
 .footer-submit-icon {
   position: absolute;
-  top: 10px;
-  right: 0;
-  transform: translateX(40%);
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
 }
 
 .main-nav-list {
@@ -1042,7 +1026,7 @@ body {
   .main-nav-list {
     flex-wrap: wrap;
     justify-content: flex-start;
-    max-width: 326px;
+    row-gap: 15px;
     margin-bottom: 40px;
   }
 }
@@ -1058,7 +1042,7 @@ body {
   cursor: pointer;
   border-radius: 4px;
   border: none;
-  padding: 6px 22px;
+  padding: 6px 25px;
   transition: box-shadow 250ms var(--transition-timing-function), background-color 250ms var(--transition-timing-function), color 250ms var(--transition-timing-function);
 }
 .btn:hover, .btn:focus {
@@ -1094,6 +1078,11 @@ body {
   border-top: 0;
   border: 1px solid #eeeeee;
 }
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .portfolio-wrap {
+    flex-grow: 1;
+  }
+}
 
 .portfolio-link {
   display: block;
@@ -1101,6 +1090,13 @@ body {
 }
 .portfolio-link:hover, .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .portfolio-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }
 
 .portfolio-thumb {
@@ -1113,7 +1109,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 101%;
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
   transition: transform 250ms var(--transition-timing-function);
@@ -1178,6 +1174,12 @@ body {
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms var(--transition-timing-function);
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    height: 581px;
+    width: 528px;
+  }
 }
 
 .modal-btn {
@@ -1287,7 +1289,7 @@ body {
 }
 
 .checkbox-label {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--title-text-color);
   display: flex;
   align-content: center;
@@ -1308,6 +1310,11 @@ body {
 }
 .checkbox-input:focus + .checkbox-label::before {
   border-color: var(--focus-color);
+}
+@media screen and (min-width: 1200px) {
+  .checkbox-label {
+    font-size: 14px;
+  }
 }
 
 .chexbox-link {

@@ -27,13 +27,15 @@
   transform: translate(-50%, -50%) scale(1);
   padding: 40px;
   width: 450px;
-  // height: 581px;
-  // width: 528px;
   background-color: var(--background-color);
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms var(--transition-timing-function);
+  @include desktop {
+    height: 581px;
+    width: 528px;
+  }
 }
 
 .modal-btn {
@@ -141,7 +143,7 @@
 }
 
 .checkbox-label {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--title-text-color);
   display: flex;
   align-content: center;
@@ -161,6 +163,9 @@
   }
   .checkbox-input:focus + &::before {
     border-color: var(--focus-color);
+  }
+  @include desktop {
+    font-size: 14px;
   }
 }
 

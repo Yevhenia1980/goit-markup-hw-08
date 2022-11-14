@@ -2,32 +2,19 @@
   background: var(--background-accent-color);
   padding-bottom: 60px;
   padding-top: 60px;
-  @include desktop {
-    width: 100vw;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 60px 0;
-  }
 }
 
 .footer__container {
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  padding: 0 15px;
-  flex-direction: column;
-  text-align: center;
-  @include tablet {
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+  }
+  @include tablet-only {
     width: 768px;
     padding: 0 15px;
   }
   @include desktop {
+    display: flex;
     align-items: baseline;
-    width: 1200px;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 15px;
-    margin: 0 auto;
   }
 }
 
@@ -50,7 +37,7 @@
   color: var(--main-text-color);
 }
 
-.footer-item:not(:last-child) {
+.adress:not(:last-child) {
   margin-bottom: 9px;
 }
 
@@ -72,11 +59,10 @@
 }
 
 .footer__wrap {
+  @media screen and(max-width: 1199px) {
+  }
   margin-bottom: 60px;
   display: block;
-  @include desktop {
-    text-align: left;
-  }
 }
 
 .adress__link {
@@ -160,8 +146,9 @@
 .footer-email-wrap {
   display: block;
   @include desktop {
-    width: 570px;
-    text-align: left;
+    // width: 570px;
+    // text-align: left;
+    margin-left: auto;
   }
 }
 
@@ -187,11 +174,15 @@
 .footer-email-label {
   width: 100%;
   margin-bottom: 20px;
+  @include desktop {
+    width: 358px;
+  }
 }
 
 .email-input {
   height: 50px;
   width: 100%;
+  max-width: 450px;
   padding: 15px 16px;
   font-size: 16px;
   background-color: var(--background-accent-color);
@@ -203,6 +194,9 @@
   &:hover,
   &:focus {
     border: 1px solid var(--focus-color);
+  }
+  @include desktop {
+    max-width: 358px;
   }
 }
 
@@ -238,7 +232,7 @@
 
 .footer-submit-icon {
   position: absolute;
-  top: 10px;
-  right: 0;
-  transform: translateX(40%);
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
 }
