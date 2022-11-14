@@ -955,7 +955,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .footer-email-label {
-    max-width: 358px;
+    width: 358px;
   }
 }
 
@@ -977,7 +977,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .email-input {
-    max-width: 358px;
+    width: 358px;
   }
 }
 
