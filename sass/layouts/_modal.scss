@@ -26,12 +26,14 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   padding: 40px;
-  width: 450px;
   background-color: var(--background-color);
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms var(--transition-timing-function);
+  @include tablet-only {
+    width: 450px;
+  }
   @include desktop {
     height: 581px;
     width: 528px;
